@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link href="projectcss.css" rel="stylesheet">
+    <link rel="icon" href="image/downlogo.png">
+</head>
+<style>
+    
+nav {
+    height: 80px;
+    padding: 0 50px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    font-family: "boruna";
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)); /* Glass-like gradient */
+   
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Optional: adds a subtle border at the bottom */
+    
+}
+
+nav .logo {
+    font-size: 2em;
+    font-weight: 600;
+    float: left;
+    display: flex;
+    width: 40%;
+    align-items: center;
+    height: 100%;
+    animation: slideFromLeft 2s forwards; /* Apply the animation to the logo */
+}
+
+/* Apply the animation to the logo to slide from left to its positiosn starts here */
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Apply the animation to the logo to slide from left to its positiosn ends here */
+
+.navigation {
+    float: right;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    justify-content: center;
+}
+
+.navigation li {
+    list-style: none;
+    transition: transform 0.3s ease; /* Add transition property for smooth animation */
+}
+
+.navigation a {
+    text-decoration: none;
+    margin: 0 30px;
+    font-size: 1.2em;
+    color: black;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    color: rgb(202, 1, 1);
+}
+.navigation li:hover{
+    transform: scale(1.2,1.2);
+}
+
+.navigation li.active {
+    transform: scale(1.2, 1.2); 
+}
+.navigation a{
+animation: fadeIn 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#menu-bottom{
+    visibility: hidden;
+    position: absolute;
+}
+
+.line{
+    background-color: rgb(202, 1, 1);
+    width: 30px;
+    height: 5px;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.menuicon{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%);
+    
+}
+
+@media screen and (max-width: 768px){
+    nav .logo{
+        float: none;
+        width: auto;
+        justify-content: left;
+    }
+    nav .navigation{
+        float: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 70px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        transition: all 0.3s ease-in-out;
+        justify-content: space-evenly;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+nav :checked ~ .navigation{
+    bottom: 0;
+    backdrop-filter: blur(3px);
+    background-color: rgba(249, 178, 178, 0.578);
+    border-radius: 50px;
+}
+nav .menuicon{
+    display: block;
+
+}
+nav :checked ~ .menuicon .line:nth-child(1){
+    transform: translateY(10px) rotate(225deg);
+}
+nav :checked ~ .menuicon .line:nth-child(3){
+    transform: translateY(-10px) rotate(-225deg);
+    
+}
+nav :checked ~ .menuicon .line:nth-child(2){
+    opacity: 0;
+}
+}
+</style>
+<body>
+    
+    <nav>
+        <input id="menu-bottom" type="checkbox"> 
+        
+        <div class="logo"><img src="image/LOGO.png" width="100%" height="auto"></div>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About us</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <label for="menu-bottom" class="menuicon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+
+    </nav>
+    <div class="banner-about">
+        
+    </div>
+    <section>
+    <div class="about-container">
+        <div class="history">
+            <h1>About us</h1>
+            <p>The Vino wine store spread out before me like a gateway to a world of exquisite aromas and richness of flavors.At the entrance I am greeted by a riot of colors luxurious bottles, sparkling glass decanters and their reflections on the polished shelves. The aromas of ancient wines, steeped in history,gently envelope the mind, as if inviting me on a captiving journey through centuries and continents.</p>
+        </div>
+        <div class="historyc">
+
+        </div>
+        <div class="historypic">
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="box1">
+        
+        </div>
+        
+        <div class="box2">
+            <p>“Vino” refers to wine. It’s a term derived from the Italian word for wine. Italian winemaking traditions and modern techniques come together to create remarkable wines from grapes grown in Italy’s beautiful vineyards. If you’re interested in exploring wines, you might want to check out Vino, the world’s largest wine marketplace. It offers millions of ratings and great wine offers, all based on community reviews. Cheers! 🍷</p>
+            <button type="button">Learn More</button>
+        </div>
+    </div>
+</section>
+</div> <!-- Close about-container -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="image/Vino logo-01.png" alt="pic">
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Aboutus.html">About us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Delivery</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p>Accra, Dansoman, 359</p>
+            <p>+233 537 77 66 46</p>
+            <p>vino@gmail.com</p>
+            <div class="footer-social">
+                <a href="#"><img src="image/fb.png" alt="Facebook"></a>
+                <a href="#"><img src="image/insta.png" alt="Instagram"></a>
+                <a href="#"><img src="image/w.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©2024. All rights reserved.</p>
+        <a href="#">Privacy policy</a>
+    </div>
+</footer>
+
+
+</body>
+</html>
